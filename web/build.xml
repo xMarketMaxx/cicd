@@ -1,0 +1,23 @@
+<project name="web" default="war">
+	<property file="build.properties"/>
+	<import file="${common.dir}/common.xml"/>
+
+	<path id="dependecy.classpath">
+		<fileset dir="${services.path}/${jar.dir}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	
+	<target name="executeDependencies">
+		<ant dir="${services.path}"/>
+	</target>
+
+	<target name="war" depends="unitTest">
+        <mkdir dir="${web.jar.dir}"/>
+        <war destfile="${web.jar.dir}/${ant.project.name}.war" webxml="${webxml.path}">
+			<fileset dir="${webapp.dir}"/>
+			<lib dir="${services.path}/${jar.dir}"/>
+			<classes dir="${classes.dir}"/>
+		</war>
+    </target>
+</project>

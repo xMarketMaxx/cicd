@@ -1,0 +1,9 @@
+apply plugin: 'war'
+dependencies {
+	testCompile 'junit:junit:4.11'
+	compile project(':services')
+}
+dependencies {
+    compile project(':services')
+    providedCompile 'javax.servlet:servlet-api:2.5'
+}

@@ -1,0 +1,15 @@
+<project name="main" default="all" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<target name="clean">
+		<delete dir="ant"/>
+	</target>
+	<target name="uploadLibs" depends="clean">
+		<ivy:retrieve/>
+	</target>
+	<target name="jar" depends="uploadLibs">
+		<ant dir="admin"/>
+	</target>
+	<target name="war" depends="jar">
+		<ant dir="web"/>
+	</target>
+	<target name="all" depends="war"/>
+</project>
