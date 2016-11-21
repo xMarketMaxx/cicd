@@ -1,2 +1,2 @@
 ${requestScope.hello}
-Hello!
+Hello! It's new version of jsp page!
