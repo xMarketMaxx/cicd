@@ -1,2 +1,2 @@
 ${requestScope.hello}
-Hello! It's new version of jsp page!
+Hello! It's new version of jsp page! Maven v1
